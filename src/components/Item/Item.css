@@ -1,0 +1,141 @@
+section {
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto; /* Center section horizontally */
+}
+
+.animation-section {
+  padding-top: 10rem; /* Extra space to ensure scrolling is needed */
+  padding-bottom: 10rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Container that will trigger the animation via Intersection Observer */
+.animation-container {
+  position: relative;
+  min-height: 300px; /* Minimum height to ensure visibility */
+  width: 100%;
+  margin-bottom: 5rem; /* Space below container */
+}
+
+/* Main horizontal layout container for final positions */
+.items-row {
+  display: flex; 
+  justify-content: space-between; /* Spread items evenly */
+  flex-wrap: wrap; /* Force single row */
+  width: 100%;
+  min-height: 600px; /* Height for animation space */
+  position: relative; /* Establish positioning context */
+}
+
+/* Individual item slots - their positions define where items will land */
+.item-slot {
+  flex: 1; /* Equal width for all slots */
+  min-width: 200px; /* Minimum width for each slot */
+  min-height:300px;
+  margin: 0 10px; /* Space between slots */
+  position: relative; /* Positioning context for the animated item */
+
+}
+
+.item-link {
+  display: block;
+  width: 70%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* The actual items that animate - these start positioned absolutely */
+.item {
+  width: 100%; /* Fill parent slot */
+  height: 300px;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  opacity: 0; /* Start invisible */
+  position: absolute; /* Take out of normal flow for animation */
+  text-align: center;
+}
+
+/* ===== INITIAL CORNER POSITIONS ===== */
+/* Each item starts in a different corner of the screen */
+
+/* Item 1: Starts from top-left corner */
+#item1 {
+  top: -100vh; /* Above viewport */
+  left: -100vw; /* Left of viewport */
+  transform: translate(0, 0); /* Initial transform state */
+}
+
+/* Item 2: Starts from top-right corner */
+#item2 {
+  top: -100vh; /* Above viewport */
+  left: 100vw; /* Right of viewport */
+  transform: translate(-100%, 100%); /* Initial transform state */
+}
+
+/* Item 3: Starts from bottom-left corner */
+#item3 {
+  top: 100vh; /* Below viewport */
+  left: -100vw; /* Left of viewport */
+  transform: translate(100%, -100%); /* Initial transform state */
+}
+
+/* Item 4: Starts from bottom-right corner */
+#item4 {
+  top: 100vw; /* Below viewport */
+  left: 100vw; /* Right of viewport */
+  transform: translate(100%, 100%); /* Initial transform state */
+}
+
+/* ===== ANIMATION DEFINITION ===== */
+/* Animation that brings items to their final positions */
+@keyframes cornerToFinal {
+  0% {
+      opacity: 0; /* Start invisible */
+      /* Starting positions defined by individual item selectors above */
+  }
+  100% {
+      opacity: 1; /* End fully visible */
+      top: 0; /* Final vertical position */
+      left: 0; /* Final horizontal position */
+      right: auto; /* Reset right property */
+      bottom: auto; /* Reset bottom property */
+      transform: translate(0, 0); /* No transform offset */
+  }
+}
+
+/* Apply animation class with proper timing */
+.animate {
+  animation: cornerToFinal 2s forwards ease-out; /* forwards keeps final state */
+  z-index: 10; /* Ensure animated items display above others */
+}
+
+/* Staggered delays for left-to-right sequence */
+#item1.animate { animation-delay: 0s; } /* First item starts immediately */
+#item2.animate { animation-delay: 0.5s; } /* Second item waits 0.3s */
+#item3.animate { animation-delay: 1s; } /* Third item waits 0.6s */
+#item4.animate { animation-delay: 1.5s; } /* Fourth item waits 0.9s */
+
+img#item-link {
+  width: 100%;     /* Fill container width */
+  height: 100%;    /* Fill container height */
+  object-fit: contain; /* Options: contain, cover, fill */
+  object-position: center; /* Adjust focal point */
+  transition: transform 0.3s ease; /* optional hover effect */
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+h3 {
+  top: 0;
+}

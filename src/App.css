@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Makes sizing calculations include padding/border */
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color:  #213547;
+  overflow-x: hidden; /* Prevents horizontal scrollbars during animation */
+}
+
+
+footer {
+  padding: 2rem;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}

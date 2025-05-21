@@ -1,0 +1,33 @@
+section {
+  padding: 5rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto; /* Center section horizontally */
+}
+
+.animation-section {
+  /* padding-top: 10rem; Extra space to ensure scrolling is needed */
+  padding-bottom: 10rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Container that will trigger the animation via Intersection Observer */
+.animation-container {
+  position: relative;
+  min-height: 300px; /* Minimum height to ensure visibility */
+  width: 100%;
+  margin-bottom: 5rem; /* Space below container */
+}
+
+/* Main horizontal layout container for final positions */
+.items-row {
+  display: flex; 
+  justify-content: space-between; /* Spread items evenly */
+  flex-wrap: wrap; /* Force single row */
+  width: 100%;
+  min-height: 250px; /* Height for animation space */
+  position: relative; /* Establish positioning context */
+}
