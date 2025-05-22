@@ -1,9 +1,11 @@
+import './Item.css'
+
 export default function Item({ itemId, title, description, url, image} ) {
   return (
     <div className="item-slot">
       <a href={url} class="item-link" >
         <div className="item" id={itemId} >
-          <h3>{title}</h3>
+          <h2>{title}</h2>
           <p>{description}</p>
           <img 
             src={image} 

@@ -12,6 +12,10 @@ section {
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
+  margin: 0;
+  font-size: 5.25rem;
+  color: #ff0000;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 /* Container that will trigger the animation via Intersection Observer */
@@ -31,3 +35,4 @@ section {
   min-height: 250px; /* Height for animation space */
   position: relative; /* Establish positioning context */
 }
+

@@ -36,7 +36,7 @@ const AnimationComponent = () => {
     const cleanupAnimations = () => {
       items.forEach(item => {
         item.style.position = 'relative';
-        item.style.transform = 'none';
+        // item.style.transform = 'none';
       });
     };
 
@@ -58,8 +58,8 @@ const AnimationComponent = () => {
     <>
       
       <section className="animation-section">
-        <h2 className="section-title">Features Section</h2>
-        <p className="section-title">Scroll down to see items animate from the four corners</p>
+        <h2 className="section-title">Digital Portfolio</h2>
+      
         
         {/*  Container that triggers the animation */}
         <div className="animation-container" id="animation-trigger" ref={triggerRef}>
@@ -71,7 +71,7 @@ const AnimationComponent = () => {
             </div>
         </div>
       </section>
-      <footer>Footer Content</footer>
+      
     </>
   );
 };

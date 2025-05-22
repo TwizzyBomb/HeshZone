@@ -11,6 +11,10 @@ function App() {
     <>
       <Header />
       <AnimationComponent />
+      <footer>
+        <p>Copyright Yahia Adrian Brocke 5/21/2025</p>
+        <p>Coontact: adrian.brocke@gmail.com</p>
+      </footer>
     </>
   )
 }

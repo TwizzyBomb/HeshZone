@@ -28,6 +28,13 @@ header p {
   font-family: "Roboto Condensed", sans-serif;
 }
 
+header p.down{
+  margin: 0;
+  font-size: 5.25rem;
+  color: #ff0000;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
 .scroll-indicator {
   position: absolute;
   bottom: 30px;
