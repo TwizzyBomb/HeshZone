@@ -1,0 +1,110 @@
+/* size agnostic styles */
+header {
+  height: 80vh; /* 80% viewport height for intro section */
+}
+
+header h1 {
+  margin: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 3rem;
+  background: linear-gradient(40deg, #ff0000, #ff0000, #ffc403, #b3ff03);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+header p {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #ff0000;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+header img {
+  height: 70px;
+  width: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+header p.down{
+  margin: 0;
+  font-size: 5.25rem;
+  color: #ff0000;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.2rem;
+  animation: bounce 2s infinite; /* Continuous bounce animation */
+}
+
+
+@media (min-width: 768px) {
+  header {
+    height: 80vh; /* 80% viewport height for intro section */
+    text-align: center;
+    margin: 2rem 0;
+  }
+
+  header img {
+    height: 110px;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2rem;
+    animation: bounce 2s infinite; /* Continuous bounce animation */
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    height: 70vh; /* Full viewport height for intro section */
+    text-align: center;
+    margin: 3rem 0;
+  }
+
+  header img {
+    height: 145px;
+    width: auto;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2rem;
+    animation: bounce 2s infinite; /* Continuous bounce animation */
+  }
+
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) translateX(-50%); /* Original position */
+  }
+  40% {
+      transform: translateY(-30px) translateX(-50%); /* Bounce up */
+  }
+  60% {
+      transform: translateY(-15px) translateX(-50%); /* Slight bounce up */
+  }
+}
