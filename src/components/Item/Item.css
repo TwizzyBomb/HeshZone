@@ -1,60 +1,36 @@
-section {
-  padding: 5rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto; /* Center section horizontally */
+
+.item h2 {
+  color:#ff0000
 }
 
-.animation-section {
-  padding-top: 10rem; /* Extra space to ensure scrolling is needed */
-  padding-bottom: 10rem;
+.item p {
+  color:#000000
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 3rem;
+.item:hover img {
+  transform: scale(1.05);
 }
 
-/* Container that will trigger the animation via Intersection Observer */
-.animation-container {
-  position: relative;
-  min-height: 300px; /* Minimum height to ensure visibility */
-  width: 100%;
-  margin-bottom: 5rem; /* Space below container */
-}
-
-/* Main horizontal layout container for final positions */
-.items-row {
-  display: flex; 
-  justify-content: space-between; /* Spread items evenly */
-  flex-wrap: wrap; /* Force single row */
-  width: 100%;
-  min-height: 600px; /* Height for animation space */
-  position: relative; /* Establish positioning context */
+img#item-link {
+  width: clamp(2rem, 30vw, auto);     /* min, default, max */
+  height: clamp(2rem, 30vh, 5rem);    /* min, default, max */
+  object-fit: 50% 60%; /* Options: contain, cover, fill */
+  transition: transform 0.3s ease; /* optional hover effect */
 }
 
 /* Individual item slots - their positions define where items will land */
 .item-slot {
   flex: 1; /* Equal width for all slots */
   min-width: 200px; /* Minimum width for each slot */
-  min-height:300px;
+  height: clamp(150px, 30vh, 350px); /* Responsive height */
   margin: 0 10px; /* Space between slots */
   position: relative; /* Positioning context for the animated item */
-
-}
-
-.item-link {
-  display: block;
-  width: 70%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 /* The actual items that animate - these start positioned absolutely */
 .item {
   width: 100%; /* Fill parent slot */
-  height: 400px;
+  height: 200px;
   text-decoration-color: #ff0000;
   background-color: #b3ff03;
   padding: 2rem;
@@ -65,12 +41,69 @@ section {
   text-align: center;
 }
 
-.item h2 {
-  color:#ff0000
+@media (min-width: 768px) {
+  img#item-link {
+    width: clamp(2rem, 30vh, auto);     /* min, default, max */
+    height: clamp(2rem, 30vh, 5rem); 
+    object-fit: 50% 60%; /* Options: contain, cover, fill */
+    transition: transform 0.3s ease; /* optional hover effect */
+  }
+  
+  
+  /* Individual item slots - their positions define where items will land */
+  .item-slot {
+    flex: 1; /* Equal width for all slots */
+    min-width: 200px; /* Minimum width for each slot */
+    height: clamp(150px, 30vh, 350px); /* Responsive height */
+    margin: 0 10px; /* Space between slots */
+    position: relative; /* Positioning context for the animated item */
+  }
+  
+  /* The actual items that animate - these start positioned absolutely */
+  .item {
+    width: 100%; /* Fill parent slot */
+    height: 200px;
+    text-decoration-color: #ff0000;
+    background-color: #b3ff03;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 10px 5px 5px #ff0000;;
+    opacity: 0; /* Start invisible */
+    position: absolute; /* Take out of normal flow for animation */
+    text-align: center;
+  }
 }
 
-.item p {
-  color:#000000
+@media (min-width: 1024px ){
+  img#item-link {
+    width: clamp(2rem, 30vw, auto);     /* min, default, max */
+    height: clamp(2rem, 30vh, 5rem); 
+    object-fit: 50% 60%; /* Options: contain, cover, fill */
+    transition: transform 0.3s ease; /* optional hover effect */
+  }
+
+  /* Individual item slots - their positions define where items will land */
+  .item-slot {
+    flex: 1; /* Equal width for all slots */
+    width: 200px; /* Minimum width for each slot */
+    height: clamp(150px, 30vh, 200px); /* Responsive height */
+    margin: 3px 10px; /* Space between slots */
+    position: relative; /* Positioning context for the animated item */
+  }
+
+  /* The actual items that animate - these start positioned absolutely */
+  .item {
+    width: 100%; /* Fill parent slot */
+    height: 200px;
+    text-decoration-color: #ff0000;
+    background-color: #b3ff03;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 10px 5px 5px #ff0000;;
+    opacity: 0; /* Start invisible */
+    position: absolute; /* Take out of normal flow for animation */
+    text-align: center;
+  }
 }
 
 /* ===== INITIAL CORNER POSITIONS ===== */
@@ -132,19 +165,3 @@ section {
 #item2.animate { animation-delay: 0.3s; } /* Second item waits 0.3s */
 #item3.animate { animation-delay: 0.6s; } /* Third item waits 0.6s */
 /* #item4.animate { animation-delay: 1.5s; } /* Fourth item waits 0.9s */
-
-img#item-link {
-  width: 100%;     /* Fill container width */
-  height: 100%;    /* Fill container height */
-  object-fit: contain; /* Options: contain, cover, fill */
-  object-position: center; /* Adjust focal point */
-  transition: transform 0.3s ease; /* optional hover effect */
-}
-
-.item:hover img {
-  transform: scale(1.05);
-}
-
-h3 {
-  top: 0;
-}

@@ -21,7 +21,7 @@ export const ITEMS = [
     itemId: "item3",
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/adrian-brocke',
-    description: "Social Media for working professionals",
+    description: "Social Media",
     image: linkedInImg
   }
 ];

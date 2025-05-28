@@ -5,7 +5,7 @@ section {
 }
 
 .animation-section {
-  /* padding-top: 10rem; Extra space to ensure scrolling is needed */
+  padding-top: 10rem; /* Extra space to ensure scrolling is needed */
   padding-bottom: 10rem;
 }
 
@@ -21,7 +21,7 @@ section {
 /* Container that will trigger the animation via Intersection Observer */
 .animation-container {
   position: relative;
-  min-height: 300px; /* Minimum height to ensure visibility */
+  height: 200px; /* Minimum height to ensure visibility */
   width: 100%;
   margin-bottom: 5rem; /* Space below container */
 }
@@ -31,8 +31,9 @@ section {
   display: flex; 
   justify-content: space-between; /* Spread items evenly */
   flex-wrap: wrap; /* Force single row */
+  gap: 1rem;
   width: 100%;
-  min-height: 250px; /* Height for animation space */
+  min-height: 200px; /* Height for animation space */
   position: relative; /* Establish positioning context */
 }
 

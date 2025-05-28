@@ -23,7 +23,7 @@ header p {
 
 header img {
   height: 70px;
-  width: auto;
+  width: clamp(50vw, auto, auto);
   max-width: 100%;
   object-fit: cover;
 }
@@ -37,7 +37,7 @@ header p.down{
 
 .scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 20vh;
   left: 50%;
   transform: translateX(-50%);
   color: white;
@@ -62,7 +62,7 @@ header p.down{
 
   .scroll-indicator {
     position: absolute;
-    bottom: 20px;
+    bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -87,7 +87,7 @@ header p.down{
 
   .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
     color: white;
