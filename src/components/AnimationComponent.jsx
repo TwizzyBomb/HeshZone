@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import "./AnimationComponent.css";
 import Item from "./Item/Item.jsx";
-import { ITEMS } from "../item-data.js";
+// import { ITEMS } from "../portfolio-data.js";
 
-const AnimationComponent = () => {
+const AnimationComponent = ({itemsList}) => {
   // Create refs for DOM access
   const triggerRef = useRef(null);
   const itemsRef = useRef([]);
@@ -65,7 +65,7 @@ const AnimationComponent = () => {
         <div className="animation-container" id="animation-trigger" ref={triggerRef}>
              {/* Row layout for final positions */}
             <div className="items-row">
-                {ITEMS.map((item) => 
+                {itemsList.map((item) => 
                 <Item key={item.title} {...item} />
                 )}
             </div>

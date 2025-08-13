@@ -2,19 +2,19 @@ import resumeImg from './assets/resume-logo-small.png';
 import gitImg from './assets/github-mark-small.png';
 import linkedInImg from './assets/linkedin-logo-small.png';
 
-export const ITEMS = [
+export const DIGITAL_PORTFOLIO = [
   {
     itemId: "item1",
     title: 'Resume',
-    url: 'https://www.linkedin.com/in/adrian-brocke',
-    description: "Latest engineer resume",
+    url: 'https://hesh.zone/latest_resume',
+    description: "Latest Resume",
     image: resumeImg
   },
   {
     itemId: "item2",
     title: 'GitHub',
     url: 'https://github.com/TwizzyBomb/',
-    description: "Coding Portfolio",
+    description: "Portfolio",
     image: gitImg
   },
   {
