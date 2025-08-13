@@ -2,7 +2,7 @@ import resumeImg from './assets/resume-logo-small.png';
 import gitImg from './assets/github-mark-small.png';
 import linkedInImg from './assets/linkedin-logo-small.png';
 
-export const ITEMS = [
+export const DIGITAL_PORTFOLIO = [
   {
     itemId: "item1",
     title: 'Resume',

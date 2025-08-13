@@ -14,6 +14,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 768px) {
+  :root {
+    height: 1900px;
+    font-size: 18px; /* Larger base font size for better readability */
+  }
+  
+  body {
+    height: 1900px;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
