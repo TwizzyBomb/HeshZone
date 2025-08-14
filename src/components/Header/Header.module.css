@@ -1,12 +1,13 @@
 /* size agnostic styles */
 header {
-  height: 80vh; /* 80% viewport height for intro section */
+  height: 30vh; /* 80% viewport height for intro section */
+  width: 90vw;
 }
 
 header h1 {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Roboto Condensed", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   background: linear-gradient(40deg, #ff0000, #ff0000, #ffc403, #b3ff03);
   background-clip: text;
   -webkit-background-clip: text;
@@ -15,14 +16,14 @@ header h1 {
 }
 
 header p {
-  margin: 0;
+  margin: 0 auto;
   font-size: 1.25rem;
   color: #ff0000;
   font-family: "Roboto Condensed", sans-serif;
 }
 
 header img {
-  height: 70px;
+  height: 40px;
   width: clamp(50vw, auto, auto);
   max-width: 100%;
   object-fit: cover;
@@ -36,19 +37,40 @@ header p.down{
 }
 
 .scroll-indicator {
-  position: absolute;
-  bottom: 20vh;
+  position: relative;
+  top: 5vh;
+  bottom: 0vh;
   left: 50%;
   transform: translateX(-50%);
   color: white;
-  font-size: 1.2rem;
+  font-size: 4rem;
   animation: bounce 2s infinite; /* Continuous bounce animation */
 }
 
+@media (min-width: 477px) {
+  header {
+    height: 40vh; /* Reduced height for smaller screens */
+  }
+
+  header img {
+    height: 50px; /* Smaller logo for mobile */
+    width: auto;
+    max-width: 80%;
+    object-fit: cover;
+  }
+
+  header h1 {
+    font-size: 2.5rem; /* Smaller title for mobile */
+  }
+
+  header p {
+    font-size: 1.2rem; /* Smaller text for mobile */
+  }
+}
 
 @media (min-width: 768px) {
   header {
-    height: 80vh; /* 80% viewport height for intro section */
+    height: 50vh; /* 80% viewport height for intro section */
     text-align: center;
     margin: 2rem 0;
   }
@@ -61,19 +83,20 @@ header p.down{
   }
 
   .scroll-indicator {
-    position: absolute;
+    position: relative;
+    top: 5vh;
     bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 1.2rem;
+    font-size: 4rem;
     animation: bounce 2s infinite; /* Continuous bounce animation */
   }
 }
 
 @media (min-width: 1024px) {
   header {
-    height: 70vh; /* Full viewport height for intro section */
+    height: 50vh; /* Full viewport height for intro section */
     text-align: center;
     margin: 3rem 0;
   }
@@ -86,12 +109,13 @@ header p.down{
   }
 
   .scroll-indicator {
-    position: absolute;
+    position: relative;
+    top: 5vh;
     bottom: 20vh;
     left: 50%;
     transform: translateX(-50%);
     color: white;
-    font-size: 1.2rem;
+    font-size: 5rem;
     animation: bounce 2s infinite; /* Continuous bounce animation */
   }
 

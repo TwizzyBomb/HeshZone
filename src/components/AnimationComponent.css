@@ -1,19 +1,26 @@
 section {
-  padding: 5rem 1rem;
+  padding: 1rem 0rem;
+  width: 95vw;
   max-width: 1200px;
-  margin: 0 auto; /* Center section horizontally */
 }
 
 .animation-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   padding-top: 10rem; /* Extra space to ensure scrolling is needed */
   padding-bottom: 10rem;
+  width: 80vw;
+  min-height: fit-content;
+
+  overflow: visible;
 }
 
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
   margin: 0;
-  font-size: 5.25rem;
+  font-size: 3rem;
   color: #ff0000;
   font-family: "Roboto Condensed", sans-serif;
 }
@@ -23,7 +30,9 @@ section {
   position: relative;
   height: 200px; /* Minimum height to ensure visibility */
   width: 100%;
-  margin-bottom: 5rem; /* Space below container */
+  margin-bottom: 1rem; /* Space below container */
+  min-height: calc(160px + 50vh);
+  overflow: visible;
 }
 
 /* Main horizontal layout container for final positions */
@@ -37,3 +46,46 @@ section {
   position: relative; /* Establish positioning context */
 }
 
+@media (min-width: 768px) {
+  section {
+    padding: 5rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Center section horizontally */
+  }
+
+  .animation-section {
+    padding-top: 10rem; /* Extra space to ensure scrolling is needed */
+    padding-bottom: 10rem;
+    min-height: fit-content;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    margin: 0;
+    font-size: 5.25rem;
+    color: #ff0000;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+
+  /* Container that will trigger the animation via Intersection Observer */
+  .animation-container {
+    position: relative;
+    height: 200px; /* Minimum height to ensure visibility */
+    width: 100%;
+    margin-bottom: 5rem; /* Space below container */
+  }
+
+  /* Main horizontal layout container for final positions */
+  .items-row {
+    display: flex; 
+    justify-content: space-between; /* Spread items evenly */
+    flex-wrap: wrap; /* Force single row */
+    gap: 1rem;
+    width: 100%;
+    min-height: 200px; /* Height for animation space */
+    position: relative; /* Establish positioning context */
+  }
+
+
+}
