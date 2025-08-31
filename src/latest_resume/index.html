@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Engineer</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+      
+      body {
+          font-family: 'Inter', sans-serif;
+          line-height: 1.4;
+          color: #1f2937;
+          background: white;
+          font-size: 11px;
+      }
+      
+      .resume-container {
+          max-width: 8.5in;
+          margin: 0 auto;
+          padding: 0.4in;
+          min-height: 11in;
+          background: white;
+          box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      }
+      
+      .header {
+          text-align: center;
+          margin-bottom: 20px;
+          padding-bottom: 15px;
+          border-bottom: 2px solid #2563eb;
+      }
+      
+      .name {
+          font-size: 24px;
+          font-weight: 700;
+          color: #1e40af;
+          margin-bottom: 5px;
+    margin: 0 auto;
+    max-width:600px;
+    max-height:10px; 
+          display: inline-block;
+      }
+		
+      .small-image {
+        max-width: 100%;
+        height: 40px;
+        width: auto;
+      }
+          
+      .title {
+          font-size: 14px;
+          font-weight: 500;
+          color: #4b5563;
+          margin-bottom: 8px;
+          margin-top:2px;
+      }
+      
+      .contact {
+          font-size: 10px;
+          color: #6b7280;
+      }
+      
+      .section {
+          margin-bottom: 16px;
+      }
+      
+      .section-title {
+          font-size: 13px;
+          font-weight: 700;
+          color: #1e40af;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 8px;
+          padding-bottom: 3px;
+          border-bottom: 1px solid #e5e7eb;
+      }
+      
+      .summary {
+          font-size: 11px;
+          line-height: 1.5;
+          color: #374151;
+          text-align: justify;
+      }
+      
+      .skills-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+      }
+      
+      .skill-category {
+          margin-bottom: 8px;
+      }
+      
+      .skill-title {
+          font-weight: 600;
+          color: #1f2937;
+          font-size: 10px;
+          margin-bottom: 3px;
+      }
+      
+      .skill-list {
+          font-size: 10px;
+          color: #4b5563;
+          line-height: 1.3;
+      }
+      
+      .experience-item {
+          margin-bottom: 14px;
+      }
+      
+      .job-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 6px;
+      }
+      
+      .job-title {
+          font-weight: 600;
+          color: #1f2937;
+          font-size: 11px;
+      }
+      
+      .company {
+          font-weight: 500;
+          color: #2563eb;
+          font-size: 11px;
+      }
+      
+      .date-location {
+          font-size: 10px;
+          color: #6b7280;
+          text-align: right;
+          line-height: 1.2;
+      }
+      
+      .achievements {
+          list-style: none;
+          margin-left: 0;
+      }
+      
+      .achievements li {
+          position: relative;
+          padding-left: 12px;
+          margin-bottom: 4px;
+          font-size: 10px;
+          line-height: 1.4;
+          color: #374151;
+      }
+      
+      .achievements li:before {
+          content: "▸";
+          position: absolute;
+          left: 0;
+          color: #2563eb;
+          font-weight: bold;
+      }
+      
+      .education {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 8px;
+      }
+      
+      .degree {
+          font-weight: 600;
+          color: #1f2937;
+          font-size: 11px;
+      }
+      
+      .school {
+          color: #2563eb;
+          font-size: 10px;
+      }
+      
+      .gpa-year {
+          font-size: 10px;
+          color: #6b7280;
+      }
+      
+      .projects {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+      }
+      
+      .project {
+          margin-bottom: 8px;
+      }
+      
+      .project-title {
+          font-weight: 600;
+          color: #1f2937;
+          font-size: 10px;
+          margin-bottom: 3px;
+      }
+      
+      .project-desc {
+          font-size: 9px;
+          color: #4b5563;
+          line-height: 1.3;
+      }
+      
+      .download-btn {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          background: #2563eb;
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+          transition: all 0.2s;
+          z-index: 1000;
+      }
+      
+      .download-btn:hover {
+          background: #1d4ed8;
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+      }
+
+      a.himg {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      
+      @media print {
+          body { background: white; }
+          .resume-container { 
+              box-shadow: none; 
+              margin: 0;
+              padding: 0.3in;
+          }
+          .download-btn { display: none; !important }
+      }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+    
+    <div class="resume-container">
+        <div class="header">
+            <div class="name"><img src="./yab-signature.png" rel="header" class="small-image" /></div>
+            <div class="contact"><a class="himg" href=mailto:adrian.brocke@gmail.com >Email</a>   •   <a href="https://www.linkedin.com/in/adrian-brocke" class="himg">LinkedIn</a></div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Professional Summary</div>
+            <div class="summary">
+                Software engineer with 7+ years of experience with enterprise development. Skilled in problem solving, designing, developing, testing, and system integration. Amiable cross-team collaborator with junior engineer coaching experience. Proven ability to bolster security protocols, ensure personal data compliance, and reduce tech debt across regulated environments in the finance, healthcare, hospitality, and energy sectors.
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Core Competencies</div>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category">
+                        <div class="skill-title">Development & Frameworks:</div>
+                        <div class="skill-list">Java (7+ yrs), Spring Boot, C++, Javascript, React</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">Cloud Infrastructure</div>
+                        <div class="skill-list">AWS, Kubernetes, Docker, OpenShift OCP4, Helm</div>
+                    </div>
+                    <div class="skill-category">
+                      <div class="skill-title">Observability & Monitoring:</div>
+                      <div class="skill-list">Datadog, ELK Stack, Elasticsearch, Kibana, SonarQube</div>
+                  </div>  
+                </div>
+                <div>
+                  <div class="skill-category">
+                        <div class="skill-title">Databases & Messaging:</div>
+                        <div class="skill-list">MySQL, PostgreSQL, MongoDB, Kafka, Event-driven systems</div>
+                  </div>
+                  <div class="skill-category">
+                        <div class="skill-title">Security & Compliance:</div>
+                        <div class="skill-list">SAST/DAST integration, HIPAA compliance, OAuth, JWT</div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-title">DevOps & CI/CD:</div>
+                        <div class="skill-list">GitLab, Jenkins, Gradle, Automated testing, TDD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">USAA</div>
+                    </div>
+                    <div class="date-location">
+                        Sep 2022 – Mar 2025<br>
+                        San Antonio, TX
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Engineered REST APIs processing 1M+ monthly transactions, ensuring high availability and performance for critical banking and credit card systems</li>
+                    <li>Led modernization initiative upgrading legacy systems to Java 17 and Spring Boot 3.2, achieving 30% performance improvement while enhancing security compliance and eliminating tech debt</li>
+                    <li>Mentored junior engineers on CI/CD pipeline deployment and security best practices </li>
+					<li>Implemented comprehensive security scanning pipeline integrating SAST/DAST tools, enabling automated vulnerability detection and reducing security incidents by proactively identifying code and runtime risks</li>
+                    <li>Integrated third-party payment platform APIs including Stripe to streamline payment processing workflows</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="company">Clarity Software Solutions</div>
+                    </div>
+                    <div class="date-location">
+                        May 2020 – Jul 2022<br>
+                        Madison, CT
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Spearheaded design and implementation of HIPAA-compliant health insurance applications, ensuring data privacy and regulatory adherence for sensitive healthcare information</li>
+                    <li>Delivered database performance enhancements reducing response times by 180ms (24% improvement), significantly improving user experience across health insurance platforms</li>
+                    <li>Collaborated with cross-functional teams to establish security best practices and compliance standards for healthcare data processing systems</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Software Developer Intern</div>
+                        <div class="company">FME</div>
+                    </div>
+                    <div class="date-location">
+                        Jul 2018 – May 2020<br>
+                        Danbury, CT
+                    </div>
+                </div>
+                <ul class="achievements">
+                    <li>Built data integrity monitoring system for SQL to Documentum migrations, implementing automated discrepancy detection and email alerting to ensure data consistency</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">Education & Projects</div>
+            <div class="education">
+                <div>
+                    <div class="degree">B.Sc. Computer Science, Minor in Security</div>
+                    <div class="school">Western Connecticut State University</div>
+                </div>
+                <div class="gpa-year">3.84 GPA | 2017-2019</div>
+            </div>
+            
+            <div class="projects">
+                <div class="project">
+                    <div class="project-title">AI-Powered Financial Analytics Platform</div>
+                    <div class="project-desc">Full-stack application leveraging ChatGPT API for intelligent expense categorization with interactive Sankey visualizations. Built with Java, Spring Boot, Python, and JavaScript.</div>
+                </div>
+                <div class="project">
+                    <div class="project-title">Secure Geo-Social Mobile Platform</div>
+                    <div class="project-desc">Android application with AES/RSA encryption, real-time socket communication, and PostgreSQL integration for location-based social interactions.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadPDF() {
+            const element = document.querySelector('.resume-container');
+            const opt = {
+                margin: 0.4,
+                filename: 'Adrian_Brocke_Cloud_Infrastructure_Engineer.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'letter', 
+                    orientation: 'portrait' 
+                }
+            };
+            
+            // Hide the download button temporarily
+            const btn = document.querySelector('.download-btn');
+            btn.style.display = 'none';
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Show the button again after PDF generation
+                btn.style.display = 'block';
+            }).catch(() => {
+                // Fallback to print if html2pdf fails
+                window.print();
+                btn.style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>

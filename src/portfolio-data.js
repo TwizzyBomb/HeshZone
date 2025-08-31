@@ -6,7 +6,7 @@ export const DIGITAL_PORTFOLIO = [
   {
     itemId: "item1",
     title: 'Resume',
-    url: 'https://hesh.zone/latest_resume',
+    url: 'https://hesh.zone/latest_resume/index.html',
     description: "Latest Resume",
     image: resumeImg
   },
