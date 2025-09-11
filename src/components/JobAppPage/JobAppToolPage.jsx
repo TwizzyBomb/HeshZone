@@ -2,17 +2,27 @@ import React, { useState } from "react";
 import "./JobAppToolPage.css";
 
 export default function RequestPage() {
-  const [field1, setField1] = useState("");
-  const [field2, setField2] = useState("");
+  const [jobTitle, setJobTitle] = useState("Software Engineer");
+  const [daysBack, setDaysBack] = useState("2");
   const [response, setResponse] = useState(null);
+  const url = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw&cx=6069166fa70fd403e&q="Software%20Engineer"%20AND%20San%20Diego%20OR%20remote%20-India%20Java&dateRestrict=d9'
+  const api_key = 'AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw';
+  const cx = '6069166fa70fd403e';
+  const q = jobTitle + ' AND San Diego OR remote -India Java';
+
 
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      const res = await fetch("https://your-api-endpoint.com", {
+      const res = await fetch("https://www.googleapis.com/customsearch/v1", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ field1, field2 }),
+        headers: { "Content-Type": "application/json",
+          "key": api_key,
+          "cx": cx,
+          "q": q,
+          "d": daysBack
+        },
+        body: "" // JSON.stringify({ jobTitle, field2 })
       });
 
       const data = await res.json();
@@ -36,11 +46,11 @@ export default function RequestPage() {
       <h1>Send POST Request</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Field 1:</label>
+          <label>Job Title:</label>
           <input
             type="text"
-            value={field1}
-            onChange={(e) => setField1(e.target.value)}
+            value={jobTitle}
+            onChange={(e) => setJobTitle(e.target.value)}
           />
         </div>
 
@@ -48,8 +58,8 @@ export default function RequestPage() {
           <label>Field 2:</label>
           <input
             type="text"
-            value={field2}
-            onChange={(e) => setField2(e.target.value)}
+            value={daysBack}
+            onChange={(e) => setDaysBack(e.target.value)}
           />
         </div>
 
