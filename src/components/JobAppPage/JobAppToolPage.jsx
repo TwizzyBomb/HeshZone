@@ -10,7 +10,7 @@ export default function RequestPage() {
   const cx = '6069166fa70fd403e';
   const q = jobTitle + ' AND San Diego OR remote -India Java';
 
-  const lambdaUrl = "https://b33pf4uiz6.execute-api.us-east-1.amazonaws.com/dev"; 
+  const lambdaUrl = "https://b33pf4uiz6.execute-api.us-east-1.amazonaws.com/dev/gjsearch"; 
 
 
   async function handleSubmit(e) {
