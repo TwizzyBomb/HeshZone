@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  justify-content: center; /* Center links horizontally */
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.4); /* Slightly transparent dark background */
+  backdrop-filter: blur(6px);      /* Subtle blur effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Keep it above page content */
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.87);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #646cff;       /* Matches your existing link hover color */
+  transform: translateY(-2px);
+}
+
+.navbar a.active {
+  color: #535bf2;       /* Highlight active link */
+  border-bottom: 2px solid #535bf2;
+  padding-bottom: 0.2rem;
+}

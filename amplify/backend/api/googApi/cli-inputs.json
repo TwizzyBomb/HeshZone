@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/gjsearch": {
+      "name": "/gjsearch",
+      "lambdaFunction": "googleJobSearchFunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
