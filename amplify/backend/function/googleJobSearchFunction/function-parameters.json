@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "googApiKey",
+      "environmentVariableName": "GOOG_API_KEY"
+    },
+    {
+      "cloudFormationParameterName": "cx",
+      "environmentVariableName": "CX"
+    }
+  ]
+}

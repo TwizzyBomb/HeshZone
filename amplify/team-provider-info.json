@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-heshzone-dev-731ef-authRole",
+      "UnauthRoleArn": "arn:aws:iam::116981780400:role/amplify-heshzone-dev-731ef-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::116981780400:role/amplify-heshzone-dev-731ef-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-heshzone-dev-731ef-deployment",
+      "UnauthRoleName": "amplify-heshzone-dev-731ef-unauthRole",
+      "StackName": "amplify-heshzone-dev-731ef",
+      "StackId": "arn:aws:cloudformation:us-east-1:116981780400:stack/amplify-heshzone-dev-731ef/7f393e30-8f57-11f0-a218-0e3b010e3503",
+      "AmplifyAppId": "d1zlf1unp9kz3e"
+    },
+    "categories": {
+      "function": {
+        "googleJobSearchFunction": {
+          "googApiKey": "AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw",
+          "cx": "6069166fa70fd403e"
+        }
+      }
+    }
+  }
+}

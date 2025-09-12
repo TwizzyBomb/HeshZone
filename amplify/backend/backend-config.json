@@ -1,0 +1,28 @@
+{
+  "function": {
+    "googleJobSearchFunction": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_googleJobSearchFunction_cx": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "googleJobSearchFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_googleJobSearchFunction_googApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "googleJobSearchFunction"
+        }
+      ]
+    }
+  }
+}
