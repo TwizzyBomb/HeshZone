@@ -10,32 +10,31 @@ export default function RequestPage() {
   const cx = '6069166fa70fd403e';
   const q = jobTitle + ' AND San Diego OR remote -India Java';
 
+  const lambdaUrl = "https://xxxxxx.execute-api.us-east-1.amazonaws.com/dev/googleJobSearchFunction"; 
+
 
   async function handleSubmit(e) {
     e.preventDefault();
+    const url = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw&cx=6069166fa70fd403e&q="' + jobTitle + '"%20AND%20San%20Diego%20OR%20remote%20-India%20Java&dateRestrict=d' + daysBack;
+
     try {
-      const res = await fetch("https://www.googleapis.com/customsearch/v1", {
-        method: "POST",
-        headers: { "Content-Type": "application/json",
-          "key": api_key,
-          "cx": cx,
-          "q": q,
-          "d": daysBack
-        },
-        body: "" // JSON.stringify({ jobTitle, field2 })
+      const res = await fetch(lambdaUrl, {
+        method: "GET",
+        // headers: { "Content-Type": "application/json"},
+        // body: JSON.stringify({ jobTitle, daysBack })
       });
 
       const data = await res.json();
       setResponse(data);
 
       // optional download
-      const blob = new Blob([JSON.stringify(data, null, 2)], {
-        type: "application/json",
-      });
-      const link = document.createElement("a");
-      link.href = URL.createObjectURL(blob);
-      link.download = "response.json";
-      link.click();
+      // const blob = new Blob([JSON.stringify(data, null, 2)], {
+      //   type: "application/json",
+      // });
+      // const link = document.createElement("a");
+      // link.href = URL.createObjectURL(blob);
+      // link.download = "response.json";
+      // link.click();
     } catch (err) {
       setResponse({ error: "Request failed" });
     }

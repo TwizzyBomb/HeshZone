@@ -15,7 +15,9 @@
       "function": {
         "googleJobSearchFunction": {
           "googApiKey": "AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw",
-          "cx": "6069166fa70fd403e"
+          "cx": "6069166fa70fd403e",
+          "deploymentBucketName": "amplify-heshzone-dev-731ef-deployment",
+          "s3Key": "amplify-builds/googleJobSearchFunction-6f3341484a7331503459-build.zip"
         }
       }
     }

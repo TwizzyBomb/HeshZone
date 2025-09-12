@@ -16,7 +16,23 @@
         }
       ]
     },
+    "AMPLIFY_function_googleJobSearchFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "googleJobSearchFunction"
+        }
+      ]
+    },
     "AMPLIFY_function_googleJobSearchFunction_googApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "googleJobSearchFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_googleJobSearchFunction_s3Key": {
       "usedBy": [
         {
           "category": "function",
