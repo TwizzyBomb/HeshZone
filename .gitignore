@@ -25,3 +25,8 @@ dist-ssr
 
 src/presence-data.js
 src/youtube-data.js
+
+# amplify (will incorporate later)
+src/amplifyconfiguration.json
+src/aws-exports.js
+/amplify/*
