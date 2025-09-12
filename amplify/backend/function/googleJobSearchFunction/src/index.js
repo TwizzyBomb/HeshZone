@@ -20,25 +20,26 @@ exports.handler = async (event) => {
     
     const api_key = 'AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw';
     const cx = '6069166fa70fd403e';
-    const q = jobTitle + ' AND San Diego OR remote -India Java';
-    const url = 'https://www.googleapis.com/customsearch/v1?key=AIzaSyBokUGx07SGs4Qy5kcdtT9RDztNGwE0kmw&cx=6069166fa70fd403e&q="Software%20Engineer"%20AND%20San%20Diego%20OR%20remote%20-India%20Java&dateRestrict=d9'
+    const q = `${jobTitle} AND San Diego OR remote -India Java`;
+    const url = `https://www.googleapis.com/customsearch/v1?key=${api_key}&cx=${cx}&q="${encodeURIComponent(q)}"&dateRestrict=d${daysBack}`;
+    console.log("Request URL:", url);
     
+    // Make the GET request to the Google Custom Search API
     const response = await fetch(url, {
       method: "GET",
       headers: { 
         "Content-Type": "application/json",
         // "key": api_key,
-      },
-      body: event.body
+      }
     });
 
     return {
         statusCode: 200,
     //  Uncomment below to enable CORS requests
-    //  headers: {
-    //      "Access-Control-Allow-Origin": "*",
-    //      "Access-Control-Allow-Headers": "*"
-    //  },
+     headers: {
+         "Access-Control-Allow-Origin": "*",
+         "Access-Control-Allow-Headers": "*"
+     },
         body: await response.text(),
     };
 };
